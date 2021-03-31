@@ -1,3 +1,8 @@
+# dirs
 env/
 __pycache__/
 migrations/
+
+# files
+.env
+*.sql*
