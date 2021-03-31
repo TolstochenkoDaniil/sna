@@ -21,7 +21,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'crispy_forms'
+    'crispy_forms',
+
+    'registration'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -36,7 +38,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'socialnetworkaddiction.urls'
+ROOT_URLCONF = 'sna.urls'
 
 TEMPLATES = [
     {
@@ -54,7 +56,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'socialnetworkaddiction.wsgi.application'
+WSGI_APPLICATION = 'sna.wsgi.application'
 
 DATABASES = {
     'default': {
