@@ -1,0 +1,14 @@
+<!-- templates/visualization/user.html -->
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Statistic visualization{% endblock %}
+
+{% block content %}
+    {% if graph %}
+    <div class="col-12 m-3" style="width:600;height:500">
+        {{ graph|safe }}
+    </div>
+    {% endif %}
+{% endblock %}

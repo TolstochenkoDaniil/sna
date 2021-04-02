@@ -1,6 +1,7 @@
 
-from typing import Type
+from typing import Any, Dict, Type
 from django.http.response import HttpResponse
+from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
 
 from user_stats.forms import UserStatisticForm
@@ -22,3 +23,16 @@ class UserStatisticView(FormView):
 
     def get_success_url(self) -> str:
         return self.request.path
+
+
+class UserStatsPlotView(TemplateView):
+    ''''''
+    template_name = 'statistic/visualization.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+
+        div = None
+        context['user_stats'] = div
+        
+        return context
