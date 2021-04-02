@@ -6,16 +6,16 @@
 {% block title %}Statistic input{% endblock %}
 
 {% block content %}
-<div class="col-12 d-flex justify-content-center m-3">
-    <div class="mt-3">
-        <h2>Data input</h2>
+    <div class="col-12 d-flex justify-content-center m-3">
+        <div class="mt-3">
+            <h2>Data input</h2>
+        </div>
     </div>
-</div>
-<div class="col-12 d-flex justify-content-center m-3">
-    <form method="post">
-        {% csrf_token %}
-        {{ form|crispy }}
-    <button type="submit" class="btn btn-success">Submit</button>
-    </form>
-</div>
+    <div class="col-12 d-flex justify-content-center m-3">
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+        <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
 {% endblock %}
