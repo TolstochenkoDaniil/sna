@@ -1,6 +1,7 @@
+from enum import unique
 from django.db import models
 from django.contrib.auth.models import User
-from django.core.validators import MinValueValidator
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class UserStats(models.Model):
@@ -23,9 +24,13 @@ class UserStats(models.Model):
         }
     )
     period = models.IntegerField(
-        validators=[MinValueValidator(limit_value=1, message='Value should be equal or greater than 1')],
+        validators=[
+            MinValueValidator(limit_value=1, message='Value should be equal or greater than 1'),
+            MaxValueValidator(limit_value=66, message='Value should be equal or less than 66')
+        ],
         error_messages={
-            'blank': 'This field cannot be blank'
+            'blank': 'This field cannot be blank',
+            'unique': 'You have already entered data for this period'
         }
     )
     method = models.CharField(
@@ -35,3 +40,8 @@ class UserStats(models.Model):
             'blank': 'This field cannot be blank'
         }
     )
+
+    class Meta:
+        constraints= [
+            models.UniqueConstraint(fields=['user', 'period'], name='users_period')
+        ]
