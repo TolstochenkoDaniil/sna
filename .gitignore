@@ -1,8 +1,11 @@
 # dirs
+.vscode/
 env/
 __pycache__/
 migrations/
-.vscode/
+staticfiles/
+.ipynb*/
+tmp/
 
 # files
 .env
@@ -10,3 +13,5 @@ migrations/
 *.exe
 *.csv
 *.ipynb
+*.json
+*.yaml
