@@ -10,8 +10,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SECRET_KEY', cast=str, default='sup3r_53cr3t_p@ssw0rd')
 
 DEBUG = env('DEBUG', cast=bool, default=False)
+CLOUD = env('CLOUD', cast=bool, default=False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -59,12 +60,34 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'sna.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if CLOUD and DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': env('DB_ENGINE', cast=str, default='django.db.backends.mysql'),
+            'PORT': env('DB_PORT', cast=str),
+            'HOST': '127.0.0.1',
+            'USER': env('DB_USER', cast=str),
+            'PASSWORD': env('DB_PASSWORD', cast=str),
+            'NAME': env('DB_NAME', cast=str),
+        }
     }
-}
+elif DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': env('DB_ENGINE', cast=str, default='django.db.backends.mysql'),
+            'HOST': '/cloudsql/{}'.format(env('DB_HOST', cast=str)),
+            'USER': env('DB_USER', cast=str),
+            'PASSWORD': env('DB_PASSWORD', cast=str),
+            'NAME': env('DB_NAME', cast=str),
+        }
+    }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
