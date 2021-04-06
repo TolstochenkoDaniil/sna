@@ -30,4 +30,3 @@ tmp/
 *.csv
 *.ipynb
 *.json
-*.yaml
