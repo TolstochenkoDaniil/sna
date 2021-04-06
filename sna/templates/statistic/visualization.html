@@ -6,9 +6,9 @@
 {% block title %}Statistic visualization{% endblock %}
 
 {% block content %}
-    {% if graph %}
+    {% if user_stats %}
     <div class="col-12 m-3" style="width:600;height:500">
-        {{ graph|safe }}
+        {{ user_stats|safe }}
     </div>
     {% endif %}
 {% endblock %}
