@@ -1,4 +1,4 @@
-from enum import unique
+from django import forms
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
@@ -13,9 +13,9 @@ class UserStats(models.Model):
         '''
         Class with method of preventing social network addiction names
         '''
-        METHOD1 = 'MT1', ('Method_1')
-        METHOD2 = 'MT2', ('Method_2')
-        METHOD3 = 'MT3', ('Method_3')
+        METHOD1 = 'MT1', ('Timer')
+        METHOD2 = 'MT2', ('Disable notification')
+        METHOD3 = 'MT3', ('Deny app access')
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     activity = models.FloatField(
@@ -34,7 +34,7 @@ class UserStats(models.Model):
         }
     )
     method = models.CharField(
-        max_length=15,
+        max_length=32,
         choices=SNAMethod.choices,
         error_messages={
             'blank': 'This field cannot be blank'

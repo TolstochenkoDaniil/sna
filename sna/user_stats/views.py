@@ -8,6 +8,7 @@ from django.http.response import HttpResponse
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
 from django.db.models import F
+from django.contrib.auth.models import User
 
 from user_stats.forms import UserStatisticForm
 from user_stats.models import UserStats
@@ -32,7 +33,6 @@ class UserStatisticView(FormView):
 
 
 class UserStatsPlotView(TemplateView):
-    ''''''
     template_name = 'statistic/visualization.html'
 
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
@@ -40,12 +40,19 @@ class UserStatsPlotView(TemplateView):
 
         columns = [col.name for col in UserStats._meta.fields]
         data = pd.DataFrame.from_records(
-            UserStats.objects.annotate(week=F('period') % 7).filter(week=0).values_list(*columns),
+            UserStats.objects.annotate(week=F('period') % 5).filter(week=0).values_list(*columns),
             columns=columns
         )
-        figure = px.box(data, x='period', y='activity', color='method')
+        figure = px.box(data, x='period', y='activity', color='method',
+                        labels={
+                            'period': 'Period, day',
+                            'activity': 'User\'s activity, hours'
+                        },
+                        width=1200, height=600,
+                        template='seaborn')
         div = opy.plot(figure, auto_open=False, output_type='div')
 
         context['user_stats'] = div
+        context['users'] = User.objects.count()
 
         return context

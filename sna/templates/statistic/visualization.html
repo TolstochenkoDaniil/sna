@@ -6,8 +6,13 @@
 {% block title %}Statistic visualization{% endblock %}
 
 {% block content %}
+    <div class="col-12 m-3">
+        <h4 class="graph-heading text-center">
+            Daily network activity along 30 days period based on <strong><u>{{ users }}</u></strong> users data
+        </h4>
+    </div>
     {% if user_stats %}
-    <div class="col-12 m-3" style="width:600;height:500">
+    <div class="col-12 m-3">
         {{ user_stats|safe }}
     </div>
     {% endif %}
