@@ -16,6 +16,7 @@ class UserStats(models.Model):
         METHOD1 = 'MT1', ('Timer')
         METHOD2 = 'MT2', ('Disable notification')
         METHOD3 = 'MT3', ('Deny app access')
+        METHOD4 = 'MT4', ('Control group')
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     activity = models.FloatField(
@@ -26,7 +27,7 @@ class UserStats(models.Model):
     period = models.IntegerField(
         validators=[
             MinValueValidator(limit_value=1, message='Value should be equal or greater than 1'),
-            MaxValueValidator(limit_value=66, message='Value should be equal or less than 66')
+            MaxValueValidator(limit_value=30, message='Value should be equal or less than 30')
         ],
         error_messages={
             'blank': 'This field cannot be blank',

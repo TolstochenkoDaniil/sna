@@ -6,6 +6,7 @@ migrations/
 staticfiles/
 .ipynb*/
 tmp/
+management/
 
 # files
 .env
