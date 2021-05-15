@@ -1,4 +1,4 @@
-# FYP report
+# Description
 
 ## Design and implementation
 
@@ -23,3 +23,49 @@ Web application provides to user features described below:
 - Easy and light registration process (only email and name)
 
 - Any time access (deployed in cloud server)
+
+## Setup
+
+```sh
+git clone https://github.com/TolstochenkoDaniil/sna.git .
+```
+
+Create virtual environment
+
+```sh
+python -m venv env
+```
+
+And activate it
+
+```sh
+source env/scripts/activate
+```
+
+Install dependencies
+
+```sh
+pip install -r requirements.txt
+```
+
+Application is hosted on google cloud, so to run app locally with database connection follow this [tutorial](https://cloud.google.com/python/django/appengine)
+
+To start app locally do the following from project directory
+
+```sh
+python sna/manage.py makemigrations
+python sna/manage.py migrate
+python sna/manage.py runserver
+```
+
+After that app will be accessible at [localhost](http://127.0.0.1:8000/)
+
+To provide sensitive data do
+
+```sh
+cd sna/sna
+touch .env
+```
+
+Put any variables used in `./sna/sna/settings.py` like this  
+`DEBUG = 0`
