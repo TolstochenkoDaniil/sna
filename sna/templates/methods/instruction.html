@@ -34,6 +34,7 @@
                                 <p class="step-text">
                                     Start your 1 hour timer every time you open social media.
                                 </p>
+                                <img src="{{ settings.MEDIA_URL }}media/images/instruction/timer.jpg" class="img-fluid" alt="Timer image">
                             </li>
                             <li class="list-group-item">
                                 <p class="step-text">
@@ -67,6 +68,7 @@
                                 <p class="step-text">
                                     Open “Notifications” tab in settings.
                                 </p>
+                                <img src="{{ settings.MEDIA_URL }}media/images/instruction/notifications.jpg" class="img-fluid" alt="Notifications image">
                             </li>
                             <li class="list-group-item">
                                 <p class="step-text">
@@ -77,11 +79,7 @@
                                 <p class="step-text">
                                     Turn off notification.
                                 </p>
-                            </li>
-                            <li class="list-group-item">
-                                <p class="step-text">
-                                    Document the usage at the end of the day.
-                                </p>
+                                <img src="{{ settings.MEDIA_URL }}media/images/instruction/notifications_off.jpg" class="img-fluid" alt="Notifications off image">
                             </li>
                         </ol>
                     </div>
@@ -105,31 +103,30 @@
                                 <p class="step-text">
                                     Go to your Home Screen.
                                 </p>
+                                <img src="{{ settings.MEDIA_URL }}media/images/instruction/apps.jpg" class="img-fluid" alt="Apps image">
                             </li>
                             <li class="list-group-item">
                                 <p class="step-text">
-                                    Delete all the social media apps.
+                                    Choose social media app.
                                 </p>
+                                <img src="{{ settings.MEDIA_URL }}media/images/instruction/app_props.jpg" class="img-fluid" alt="App properties image">
                             </li>
                             <li class="list-group-item">
                                 <p class="step-text">
-                                    Open the desired app.
+                                    Delete the app.
                                 </p>
-                            </li>
-                            <li class="list-group-item">
-                                <p class="step-text">
-                                    Turn off notification.
-                                </p>
-                            </li>
-                            <li class="list-group-item">
-                                <p class="step-text">
-                                    Document the usage at the end of the day.
-                                </p>
+                                <img src="{{ settings.MEDIA_URL }}media/images/instruction/app_deletion.jpg" class="img-fluid" alt="App deletion image">
                             </li>
                         </ol>
                     </div>
                 </div>
             </div>
+        </li>
+        <li class="list-group-item">
+            <p class="step-text">
+                Summarize all the usage data from the described social media applications in the welcome email.
+            </p>
+            <img src="{{ settings.MEDIA_URL }}media/images/instruction/time_usage.jpg" class="img-fluid" alt="Time usage image">
         </li>
         <li class="list-group-item">
             <a class="link" href={% url 'statistic' %}>Submit</a>
