@@ -1,0 +1,155 @@
+<!-- templates/about.html -->
+<div class="col-12 my-3">
+    <p class="h4 m-2">
+        Instruction
+    </p>
+    <ol class="list-group list-group-numbered">
+        <li class="list-group-item">
+            <a class="link" href={% url 'registration' %}>Register</a>
+            <img src="media/images/instruction/register.jpg" class="img-fluid" alt="Responsive image">
+        </li>
+        <li class="list-group-item">
+            <a class="link" href={% url 'login' %}>Log in</a>
+            <img src="media/images/instruction/login.jpg" class="img-fluid" alt="Responsive image">
+        </li>
+        <li class="list-group-item">
+            Choose method
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Time restriction
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            “Pomodoro” time restraining technique is based on the famous time management approach
+                            developed in 1980s. It was used to break work time in to intervals initially but then got widely
+                            developed by tech world for work and excessive use limit purposes.
+                        </div>
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">
+                                <p class="step-text">
+                                    Start your timer every time you open social media.
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="step-text">
+                                    Write down anytime beyond the timer designated time, you have spent on the social media apps having checked your daily usage time in settings.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Notification blocker
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+                            Methodology incorporates a notification blocking approach where the user will turn off all
+                            notifications from all social media websites. This will reduce the distracting notification and
+                            therefore remove the incentive to open the platform instantaneously.
+                        </div>
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">
+                                <p class="step-text">
+                                    Go to the settings.
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="step-text">
+                                    Open “Notifications” tab in settings.
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="step-text">
+                                    Open the desired app.
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="step-text">
+                                    Turn off notification.
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="step-text">
+                                    Document the usage at the end of the day.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Delete apps
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body">
+                            The simplest and the hardest method out of the three. Simply delete all the social media apps
+                            from your device. If the user has decided to download the app back, he is asked to document
+                            his usage.
+                        </div>
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">
+                                <p class="step-text">
+                                    Go to your Home Screen.
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="step-text">
+                                    Delete all the social media apps.
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="step-text">
+                                    Open the desired app.
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="step-text">
+                                    Turn off notification.
+                                </p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="step-text">
+                                    Document the usage at the end of the day.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <a class="link" href={% url 'statistic' %}>Submit</a>
+            <img src="media/images/instruction/submit.jpg" class="img-fluid" alt="Responsive image">
+        </li>
+        <li class="list-group-item">
+            Continue for 30 days.
+        </li>
+    </ol>
+</div>
+<div class="col-12 my-3">
+    <div class="card text-white bg-info mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Note</h5>
+            <p class="card-text">
+                All the above methodologies were selected because of the simplicity of their use, and minimal
+                effort from the studied subjects.<br>
+                In practice those methodologies can be used separately or
+                they can used in combination with one another.
+            </p>
+        </div>
+    </div>
+</div>

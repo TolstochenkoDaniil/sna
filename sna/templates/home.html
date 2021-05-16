@@ -4,53 +4,50 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-    {% if user.is_authenticated %}
-        <div class="col-12 my-3">
-            <div class="card">
-                <div class="card-body">
-                    <p class="h4 m-2">
-                        Dear, {{ user.username }}!
-                    </p>
-                    <p class="m-2">
-                        We're glad you decide to participate in our research.
-                        Please, read the <mark>information below</mark> to get to know the main point.
-                    </p>
-                </div>
+    <div class="col-12 my-3">
+        <div class="card">
+            <div class="card-body">
+            {% if user.is_authenticated %}
+                <p class="h4 m-2">
+                    Dear, {{ user.username }}!
+                </p>
+                <p class="m-2">
+                    We're glad you decide to participate in our research.
+                    Please, read the <mark>information below</mark> to get to know the main point.
+                </p>
+            {% else %}
+                <p class="h4 m-2">
+                    Welcome to SNAR project!
+                </p>
+                <p class="m-2">You are <b>not logged in</b></p>
+                <p class="m-2">Click here to <a href="{% url 'login' %}">log In</a> first</p>
+            {% endif %}
             </div>
         </div>
-        <div class="col-12">
-            <p class="h4 text-md-left font-weight-normal my-3">About research</p>
-            <p class="m-2">
-                The advent of Social Media from its early days of methods of enhanced 
-                communication to Presidents and world leaders using it as their primary 
-                means of communications both domestically and internationally has brought us to a society
-                where social media has gone from being an acceptable norm to a <strong>stark necessity</strong> in many places.
-             </p>
-             <p class="m-2">
-                As has the popularity of Social Media grown so has its dependence by many aspects of society.
-                There are those who see nothing but the benefits of social media and also those
-                who not only stay as far away from it as possible but also see it as being detrimental to societal norms
-                and values there are also those who advocate a more balanced view.
-            </p>
-            <p class="m-2">
-                If indeed excessive Social Media usage is a <strong>negative addiction</strong> then like all addictions plaguing mankind,
-                a rational sensible methodology of addressing it should be developed.
-            </p>
-            <p class="m-2">
-                The <u>methods</u> listed below will show you the <strong>ways</strong> you can use to change your habits when using social media excessively.
-            </p>
-        </div>
-        {% block methods %}
-            {% include 'methods/description.html' %}
-        {% endblock %}
-    {% else %}
-        <div class="col-12 my-3 mx-auto d-flex justify-content-center">
-            <div class="card m-3">
-                <div class="card-body text-center m-3">
-                    <h3><b>You are not logged in</b></h3>
-                    <p>Click here to <a href="{% url 'login' %}">log In</a> first</p>
-                </div>
-            </div>
-        </div>
-    {% endif %}
+    </div>
+    <div class="col-12">
+        <p class="h4 text-md-left font-weight-normal my-3">About research</p>
+        <p class="m-2">
+            The advent of Social Media from its early days of methods of enhanced 
+            communication to Presidents and world leaders using it as their primary 
+            means of communications both domestically and internationally has brought us to a society
+            where social media has gone from being an acceptable norm to a <strong>stark necessity</strong> in many places.
+        </p>
+        <p class="m-2">
+            As has the popularity of Social Media grown so has its dependence by many aspects of society.
+            There are those who see nothing but the benefits of social media and also those
+            who not only stay as far away from it as possible but also see it as being detrimental to societal norms
+            and values there are also those who advocate a more balanced view.
+        </p>
+        <p class="m-2">
+            If indeed excessive Social Media usage is a <strong>negative addiction</strong> then like all addictions plaguing mankind,
+            a rational sensible methodology of addressing it should be developed.
+        </p>
+        <p class="m-2">
+            The <u>methods</u> listed below will show you the <strong>ways</strong> you can use to change your habits when using social media excessively.
+        </p>
+    </div>
+    {% block methods %}
+        {% include 'methods/instruction.html' %}
+    {% endblock %}
 {% endblock %}
