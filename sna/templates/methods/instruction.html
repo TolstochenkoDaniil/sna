@@ -6,11 +6,11 @@
     <ol class="list-group list-group-numbered">
         <li class="list-group-item">
             <a class="link" href={% url 'registration' %}>Register</a>
-            <img src="media/images/instruction/register.jpg" class="img-fluid" alt="Responsive image">
+            <img src="{{ settings.MEDIA_URL }}media/images/instruction/register.jpg" class="img-fluid" alt="Register image">
         </li>
         <li class="list-group-item">
             <a class="link" href={% url 'login' %}>Log in</a>
-            <img src="media/images/instruction/login.jpg" class="img-fluid" alt="Responsive image">
+            <img src="{{ settings.MEDIA_URL }}media/images/instruction/login.jpg" class="img-fluid" alt="Login image">
         </li>
         <li class="list-group-item">
             Choose method
@@ -32,7 +32,7 @@
                         <ol class="list-group list-group-numbered">
                             <li class="list-group-item">
                                 <p class="step-text">
-                                    Start your timer every time you open social media.
+                                    Start your 1 hour timer every time you open social media.
                                 </p>
                             </li>
                             <li class="list-group-item">
@@ -133,7 +133,7 @@
         </li>
         <li class="list-group-item">
             <a class="link" href={% url 'statistic' %}>Submit</a>
-            <img src="media/images/instruction/submit.jpg" class="img-fluid" alt="Responsive image">
+            <img src="{{ settings.MEDIA_URL }}media/images/instruction/submit.jpg" class="img-fluid" alt="Submit image">
         </li>
         <li class="list-group-item">
             Continue for 30 days.

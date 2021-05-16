@@ -10,7 +10,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light bg-gradient">
     <div class="d-flex flex-grow-1">
         <a class="navbar-brand mx-3" href="/">SNAR</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -27,7 +27,7 @@
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{user.username}}
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
@@ -48,6 +48,7 @@
     <body>
         <div class="container fluid">
             <div class="row">
+                {% load static %}
                 {% block content %}
                 {% endblock %}
             </div>
