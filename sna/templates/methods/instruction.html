@@ -1,4 +1,5 @@
 <!-- templates/about.html -->
+{% load static %}
 <div class="col-12 my-3">
     <p class="h4 m-2">
         Instruction
@@ -6,11 +7,11 @@
     <ol class="list-group list-group-numbered">
         <li class="list-group-item">
             <a class="link" href={% url 'registration' %}>Register</a>
-            <img src="{{ settings.MEDIA_URL }}media/images/instruction/register.jpg" class="img-fluid" alt="Register image">
+            <img src="{% static 'media/images/instruction/register.jpg' %}" class="img-fluid" alt="Register image">
         </li>
         <li class="list-group-item">
             <a class="link" href={% url 'login' %}>Log in</a>
-            <img src="{{ settings.MEDIA_URL }}media/images/instruction/login.jpg" class="img-fluid" alt="Login image">
+            <img src="{% static 'media/images/instruction/login.jpg' %}" class="img-fluid" alt="Login image">
         </li>
         <li class="list-group-item">
             Choose method
@@ -34,7 +35,7 @@
                                 <p class="step-text">
                                     Start your 1 hour timer every time you open social media.
                                 </p>
-                                <img src="{{ settings.MEDIA_URL }}media/images/instruction/timer.jpg" class="img-fluid" alt="Timer image">
+                                <img src="{% static 'media/images/instruction/timer.jpg' %}" class="img-fluid" alt="Timer image">
                             </li>
                             <li class="list-group-item">
                                 <p class="step-text">
@@ -68,7 +69,7 @@
                                 <p class="step-text">
                                     Open “Notifications” tab in settings.
                                 </p>
-                                <img src="{{ settings.MEDIA_URL }}media/images/instruction/notifications.jpg" class="img-fluid" alt="Notifications image">
+                                <img src="{% static 'media/images/instruction/notifications.jpg' %}" class="img-fluid" alt="Notifications image">
                             </li>
                             <li class="list-group-item">
                                 <p class="step-text">
@@ -79,7 +80,7 @@
                                 <p class="step-text">
                                     Turn off notification.
                                 </p>
-                                <img src="{{ settings.MEDIA_URL }}media/images/instruction/notifications_off.jpg" class="img-fluid" alt="Notifications off image">
+                                <img src="{% static 'media/images/instruction/notifications_off.jpg' %}" class="img-fluid" alt="Notifications off image">
                             </li>
                         </ol>
                     </div>
@@ -103,19 +104,19 @@
                                 <p class="step-text">
                                     Go to your Home Screen.
                                 </p>
-                                <img src="{{ settings.MEDIA_URL }}media/images/instruction/apps.jpg" class="img-fluid" alt="Apps image">
+                                <img src="{% static 'media/images/instruction/apps.jpg' %}" class="img-fluid" alt="Apps image">
                             </li>
                             <li class="list-group-item">
                                 <p class="step-text">
                                     Choose social media app.
                                 </p>
-                                <img src="{{ settings.MEDIA_URL }}media/images/instruction/app_props.jpg" class="img-fluid" alt="App properties image">
+                                <img src="{% static 'media/images/instruction/app_props.jpg' %}" class="img-fluid" alt="App properties image">
                             </li>
                             <li class="list-group-item">
                                 <p class="step-text">
                                     Delete the app.
                                 </p>
-                                <img src="{{ settings.MEDIA_URL }}media/images/instruction/app_deletion.jpg" class="img-fluid" alt="App deletion image">
+                                <img src="{% static 'media/images/instruction/app_deletion.jpg' %}" class="img-fluid" alt="App deletion image">
                             </li>
                         </ol>
                     </div>
@@ -126,11 +127,11 @@
             <p class="step-text">
                 Summarize all the usage data from the described social media applications in the welcome email.
             </p>
-            <img src="{{ settings.MEDIA_URL }}media/images/instruction/time_usage.jpg" class="img-fluid" alt="Time usage image">
+            <img src="{% static 'media/images/instruction/time_usage.jpg' %}" class="img-fluid" alt="Time usage image">
         </li>
         <li class="list-group-item">
             <a class="link" href={% url 'statistic' %}>Submit</a>
-            <img src="{{ settings.MEDIA_URL }}media/images/instruction/submit.jpg" class="img-fluid" alt="Submit image">
+            <img src="{% static 'media/images/instruction/submit.jpg' %}" class="img-fluid" alt="Submit image">
         </li>
         <li class="list-group-item">
             Continue for 30 days.

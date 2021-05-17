@@ -16,4 +16,4 @@ urlpatterns = [
     path('statistic/', UserStatisticView.as_view(), name='statistic'),
     path('statistic/charts', UserStatsPlotView.as_view(), name='charts')
 ]
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
